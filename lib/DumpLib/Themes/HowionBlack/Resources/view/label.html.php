@@ -1,0 +1,1 @@
+<span class="dmplb-l <?= $sculpt->fetch('label-class') ?>"><span><?= $sculpt->fetch('label-name') ?></span><samp><?= $sculpt->fetch('label-value') ?></samp></span>

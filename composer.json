@@ -1,0 +1,19 @@
+{
+	"name": "howion/dumplib",
+	"description": "PHP DumpLib",
+	"keywords": ["dumplib", "dump"],
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "howion",
+			"email": "howionwastaken@gmail.com"
+		}
+	],
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"DumpLib\\": "lib/DumpLib/"
+		}
+	}
+}

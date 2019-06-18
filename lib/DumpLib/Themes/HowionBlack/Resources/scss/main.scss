@@ -1,0 +1,161 @@
+// IMPORT CSS BASE64 EMBEDED FONT
+@import 'gobold';
+
+$index-font: 'Gobold', sans-serif;
+
+@mixin dmplb-unselectable
+{
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@mixin dmplb-clearfix
+{
+  &::after
+  {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+body
+{
+  @include dmplb-clearfix;
+
+  margin: 40px 0 40px 40px;
+  background-color: #232323;
+}
+
+.dmplb
+{
+  &-logo
+  {
+    @include dmplb-unselectable;
+
+    display: block;
+    float: left;
+    clear: both;
+    margin: 0 0 10px 0;
+  }
+
+  $dmp-padding-left: 16px;
+
+  &-dmp // DUMP CONTAINER
+  {
+    position: relative;
+    float: left;
+    clear: both;
+    margin: 60px 0 0 $dmp-padding-left;
+    z-index: 0;
+    font-size: 16px;
+    font-family: 'Roboto Mono', monospace;
+    white-space: nowrap;
+  }
+
+  &-dmp::before // INDEX
+  {
+    @include dmplb-unselectable;
+    display: block;
+    position: absolute;
+    font-family: $index-font;
+    // font-weight: 900;
+    color: #393939;
+    font-size: 50px;
+    top: -20px;
+    left: -$dmp-padding-left;
+    z-index: -1;
+    content: attr(index);
+  }
+
+  &-w // WRAPPER
+  {
+    color: #FF0088;
+  }
+
+  &-v // VALUE
+  {
+    color: #00FF80;
+  }
+
+  &-l // LABEL
+  {
+    @include dmplb-unselectable;
+
+    display: inline-block;
+    position: relative;
+
+    margin: 0 9px 0 0;
+    top: 3px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    span, // LABEL
+    samp  // VALUE
+    {
+      float: left;
+      padding: 2px 7px 2px 7px;
+    }
+  }
+
+  // LABEL COLOR -- BLUE
+  &-l.dmplb-lc-b
+  {
+    span
+    {
+      background-color: #00D3FF;
+    }
+
+    samp
+    {
+      background-color: #00BEE6;
+    }
+  }
+
+  // LABEL COLOR -- GREEN
+  &-l.dmplb-lc-g
+  {
+    span
+    {
+      background-color: #34D867;
+    }
+
+    samp
+    {
+      background-color: #22BC50;
+    }
+  }
+
+  &-t  // TABLE
+  {
+    position: relative;
+    display: block;
+    width: auto;
+    border: 0;
+    border-spacing: 0;
+    margin: 2px 0 0 20px;
+
+    td // CELL
+    {
+      vertical-align: top;
+      text-align: left;
+    }
+  }
+
+  &-n // KEY NAME
+  {
+    color: #FFB300;
+
+    &::after
+    {
+      content: ":";
+      color: #919191;
+      margin: 0 5px 0 5px;
+      float: right;
+    }
+  }
+}
